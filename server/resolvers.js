@@ -1,14 +1,21 @@
 export const resolvers = {
     Query: {
-        job:()=>{
-            return(
+        jobs:()=>{
+            return [
                 {
-                    id:'id1',
-                    title:"Frontend Developer",
-                    description:"We are looking for a Frontend Developer familiar with React."
+                    id:1,
+                    title:"Job 1",
+                    description:"This is job 1",
+                },
+                {
+                    id:2,
+                    title:"Job 2",
+                    description:"This is job 2",
                 }
-            )
+            ]
         }
-    
-    },
+    }
 };
+        
+    
+
