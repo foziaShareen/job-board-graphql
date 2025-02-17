@@ -1,5 +1,14 @@
 export const resolvers = {
     Query: {
-        greeting: () => 'Hello world',
+        job:()=>{
+            return(
+                {
+                    id:'id1',
+                    title:"Frontend Developer",
+                    description:"We are looking for a Frontend Developer familiar with React."
+                }
+            )
+        }
+    
     },
 };
