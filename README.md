@@ -1,4 +1,5 @@
 # GraphQL Job Board
+it is first part
 
 This is a project used in the [GraphQL by Example](https://www.udemy.com/course/graphql-by-example/?referralCode=7ACEB04674F000BAC061) course.
 
