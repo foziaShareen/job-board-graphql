@@ -1,16 +1,34 @@
-we cannot open sqlite3 in vscode as it is</br>
-binary , we have to install extention for it </br>
-we will install sqlite by florian<br>
-date is not present in our database, rather it is present in database as createdAt</br>
-but we want to display it as date field there are many ways to do it</br>
-Job:{
-        // date:()=>'12-2022-4' we can  do it hardcoded 
-}
-or dynamic as below<br>
-Job:{
-     date:(job)=>{
-            console.log("resolving job",job)
-            return job.createdAt
+
+# Project Setup
+
+now in client folder</br>
+ npm install graphql-request graphql</br>
+make a folder name graphql </br>
+queries.js
+here we will write our graphql queries</br>
+first import class GraphQlClient,and gql, gql is used to highlight the graphql query as a graphql query</br>
+javascript
+import { GraphQLClient,gql } from 'graphql-request';
+const client = new GraphQLClient('https://api.example.com/graphql');</br>
+export function getJobs(){
+        const query = gql`
+        query{
+                jobs{
+                        id
+                        title
+                        date
+                        company{
+                                id
+                                name
+                        }
+                }
         }
+        `
+        Cconst date = async client.request(query)
+        return data.jobs
+        note we can destructure const{jobs}direct instead of data.jobs
 }
-this date contain time also we can slice to get only yyy-mmm-ddd 
+</br>
+in homePage </br>
+import { getJobs } from '../graphql/queries.js';</br>
+getJobs().then((jobs)=>console.log('jobs',jobs))

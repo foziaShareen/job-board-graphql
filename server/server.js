@@ -11,7 +11,7 @@ const PORT = 9000;
 
 const startServer = async () => {
   const app = express();
-  app.use(cors(), express.json(), authMiddleware);
+ app.use(cors(), express.json(), authMiddleware);
 
   app.post('/login', handleLogin);
   const typeDefs = await readFile('./schema.graphql', 'utf-8');
@@ -26,3 +26,4 @@ const startServer = async () => {
 };
 
 startServer();
+ 

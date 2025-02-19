@@ -1,10 +1,22 @@
 type Query{
     jobs:[Job!]
+    job(id:ID):Job
+
+}
+""" represents a job posted"""
+type Company{
+    id:ID!
+    name:String!
+    description:String
 }
 type Job{
     id:ID!
+    """date is present in database as createdAt but we 
+    want to display it as _date_ , so we have make a resolver for 
+    it, so the date will displaye when job is queried,it is in the format of ISO8601  """
     date:String!
     title:String
     description:String
+    company:Company
 
 }
